@@ -1,0 +1,21 @@
+
+
+@media (max-width: 700px){
+    img#logo{
+        height: 45px;
+    }
+
+    div.encabezado {
+        font-size: 100%
+     }
+}
+
+@media (min-width: 700px){
+    img#logo{
+        height: 70px;
+    }
+
+    div.encabezado {
+       font-size: 200%
+    }
+}
