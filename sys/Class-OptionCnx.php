@@ -7,8 +7,8 @@ class OptionCnx
   public $ip = 'localhost';
 	public $dataBaseName= 'puesto';
 	public $port = "3306";
-	public $user = 'leyoPHPdata';
-	public $password = 'bdMCPzrHxIPXgp2aDatz';
+	public $user = 'leo';
+	public $password = '3808cce1764a7461ac1d5ff310acf05f';
   public $conexion = null;
 
   function getConexion(){
