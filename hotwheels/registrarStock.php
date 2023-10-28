@@ -17,8 +17,24 @@
         <input type="button" name="searchCode" value="Busca Modelo" onclick="">
     </form>
 
-    <div>
-
+    <div id="ventanaRegistro">
+	<form name="frmRegistroStockHotwheels">
+	  <label name="lblcodeHotwheels">Codigo</label>
+	  <input type="text" name="txtCodeHotwheels" value="">
+	  <br>
+	  <label name="lblmodelName">Nombre del modelo</label>
+	  <input type="text" name="txtModelName" value="">
+	  <br>
+	  <label name="lblstock">Piezas disponibles</label>
+	  <input type="number" name="numStock" value="">
+	  <br>
+	  <label name="lblprice">Precio</label>
+	  <input type="number" name="numPrice" value="">
+	  <br>
+	  <label name="lbllocation">Ubicacion</label>
+	  <input type="text" name="txtLocation" value="">
+	  
+	</form>
     </div>
 
 </body>
