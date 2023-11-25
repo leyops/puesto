@@ -1,3 +1,6 @@
+function loadVentaTempoConsulta(){
+	location.href = 'venta_tempo_consultas.php';
+}
 
 function loadResumenVentas(inHtml){
     var xmlhttp = new XMLHttpRequest();

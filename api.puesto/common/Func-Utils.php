@@ -19,6 +19,10 @@ function numYear($str){
     return $asd;
 }
 
+function strSQLfull($str){
+    return (strSQL(trim($str)));
+}
+
 
 
 

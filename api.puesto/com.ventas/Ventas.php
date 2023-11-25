@@ -41,6 +41,43 @@ class Ventas{
 
 		return $lista;
 	}
+
+	function get_listado_ventas_search($search){
+
+		$opts = new OptionCnx();
+		$conexionMySQL = $opts->getConexion();
+		$listaBusqueda = array();
+		$listWhere = array();
+		
+
+		//$sql = "SELECT * FROM PuestoNavidad.ventas order by id_venta;";
+		$sql = "SELECT id_venta, producto, cantidad, precio, cantidad * precio AS subtotal, DATE( fecha ) AS fecha, TIME( fecha ) AS hora FROM  puesto.ventas_temporadas WHERE producto LIKE '%".$search."%' ORDER BY id_venta DESC; ";
+
+		$resultado = mysqli_query($conexionMySQL, $sql);
+
+
+		$lista = array();
+
+		while ($fila = mysqli_fetch_assoc($resultado)) {
+			$current = new ItemVentas();
+
+			$current->id_venta=$fila['id_venta'];
+			$current->producto=$fila['producto'];
+			$current->cantidad=$fila['cantidad'];
+			$current->precio=$fila['precio'];
+			$current->subtotal=$fila['subtotal'];
+			$current->fecha=$fila['fecha'];
+			$current->hora=$fila['hora'];
+			
+			$lista[]=$current;
+		}
+
+		mysqli_close($conexionMySQL);
+
+		return $lista;
+	}
+
+
 	
 	function get_venta_index($id_venta){
 		$opts = new OptionCnx();

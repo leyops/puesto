@@ -20,6 +20,7 @@ $listadoVentas = $ventas->get_listado_ventas();
 		<td onclick="loadResumenVentas('zonaVentas');" style="cursor: pointer">Registro ventas</td>
 		<td onclick="loadEstadisticasPorDia('zonaVentas');" style="cursor: pointer">Ventas x dia</td>
 		<td onclick="" style="cursor: pointer">Top productos</td>
+		<td onclick="loadVentaTempoConsulta();" style="cursor: pointer">Consultar venta</td>
 		</tr>
 	</table>
 	</div>

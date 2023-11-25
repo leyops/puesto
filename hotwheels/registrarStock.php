@@ -16,6 +16,7 @@
         <br>
         <input type="button" name="searchCode" value="Busca Modelo" onclick="">
     </form>
+	<br>	
 
     <div id="ventanaRegistro">
 	<form name="frmRegistroStockHotwheels">
