@@ -18,7 +18,8 @@
     </form>
 	<br>	
 
-    <div id="ventanaRegistro" style="display:none;">
+    <!-- <div id="ventanaRegistro" style="display:none;"> -->
+	<div id="ventanaRegistro">
 	<form name="frmRegistroStockHotwheels">
 	  <label name="lblyearHotwheels">Año</label>
 	  <input type="number" name="numYearHotwheels" value="">
@@ -55,6 +56,10 @@
 	  <label name="lbllocation">Comentario</label>
 	  <input type="text" name="txtLocation" value="">
 	  <br>
+
+	  <input type="button" name="salvar" value="Guardar" onclick="updateHotwheelsInfo();">
+	  <br>
+	  <br>
 	  
 	  <input type="file" name="imgFileHotwheels" id="imgPhotoHotwheels">
 	  <input type="button" name="addHotwheelsPhoto" value="Subir img" onclick="uploadPhotoFile();">
@@ -62,15 +67,12 @@
 	    <!--<img src="" name="imgPortada" alt="Img de Hotwheels" id="imgHotwheelsPortada">-->
 	  </div>
 
-	  <input type="button" name="salvar" value="Guardar">
+	  
 
 	</form>
     </div>
 
-	<div id="ventanaRegistro" style="display:none;">
-		<p>Código no encontrado</p>
-    </div>
-
+	
 	<script src="./sys/admstockHotwheels.js"></script>
 	
 

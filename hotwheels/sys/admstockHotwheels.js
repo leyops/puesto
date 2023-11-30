@@ -1,5 +1,5 @@
 function getInfoHotwheelsByModelo(){
-    document.getElementById("ventanaRegistro").style.display = "none";
+    //document.getElementById("ventanaRegistro").style.display = "none";
 
     let txtTo = document.forms["frmSearchCode"]["hotwheelsCode"].value;
     //window.alert("Entre"); HCX22
@@ -40,19 +40,54 @@ function getInfoHotwheelsByModelo(){
 	xmlhttp.send();
 }
 
+function updateHotwheelsInfo(){
+
+    if(!document.forms["frmRegistroStockHotwheels"]["txtCodeHotwheels"].value){
+        return;
+    }
+    
+    var url = "./sys/updateHotwheelsInfo.php";
+    var fd = new FormData();
+    fd.append("numYearHotwheels", ""+document.forms["frmRegistroStockHotwheels"]["numYearHotwheels"].value);
+    fd.append("txtCodeHotwheels", ""+document.forms["frmRegistroStockHotwheels"]["txtCodeHotwheels"].value);
+    fd.append("txtColHotwheels", ""+document.forms["frmRegistroStockHotwheels"]["txtColHotwheels"].value);
+    fd.append("txtModelName", ""+document.forms["frmRegistroStockHotwheels"]["txtModelName"].value);
+    fd.append("numStock", ""+document.forms["frmRegistroStockHotwheels"]["numStock"].value);
+    fd.append("numPrice", ""+document.forms["frmRegistroStockHotwheels"]["numPrice"].value);
+    fd.append("txtLocation", ""+document.forms["frmRegistroStockHotwheels"]["txtLocation"].value);
+    fd.append("txtSerieName", ""+document.forms["frmRegistroStockHotwheels"]["txtSerieName"].value);
+    fd.append("txtSerieNum", ""+document.forms["frmRegistroStockHotwheels"]["txtSerieNum"].value);
+    
+
+    var xmlHTTP = new XMLHttpRequest();
+    xmlHTTP.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            alert("Regrese " + this.responseText);
+            
+        }
+    }
+    xmlHTTP.open("POST", url, true);
+    xmlHTTP.send(fd);
+}
+
 
 function uploadPhotoFile(){
     //var url = "/ReadMoveWebServices/WSUploadFile.asmx/UploadFile";
+    if(!document.forms["frmRegistroStockHotwheels"]["txtCodeHotwheels"].value)
+        return;
     var url = "./sys/uploadPhoto.php";
     var archivoSeleccionado = document.getElementById("imgPhotoHotwheels");
     var file = archivoSeleccionado.files[0];
     var fd = new FormData();
     fd.append("archivo", file);
+    fd.append("toy", ""+document.forms["frmRegistroStockHotwheels"]["txtCodeHotwheels"].value);
+    
     var xmlHTTP = new XMLHttpRequest();
     xmlHTTP.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 
             alert("chido " + this.responseText);
+            //Agregar img en el espacio de divs
         }
     }
     //xmlHTTP.upload.addEventListener("loadstart", loadStartFunction, false);
