@@ -19,7 +19,7 @@ require("../../api.puesto/common/Func-Utils.php");
        $temp = $_FILES['archivo']['tmp_name'];
        //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
       if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 100000000))) {
-         //echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+         echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>';
          // - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
       }
       else {
@@ -55,11 +55,12 @@ require("../../api.puesto/common/Func-Utils.php");
              $resultado = mysqli_query($conexionMySQL, $sql);
 
              mysqli_close($conexionMySQL);
+             echo "Ok";
 
          }
          else {
             //Si no se ha podido subir la imagen, mostramos un mensaje de error
-            //echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
+            echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
          }
        }
     }
