@@ -37,8 +37,8 @@ require("../../api.puesto/common/Func-Utils.php");
          $archivo = $newFile;
          //Si la imagen es correcta en tamaño y tipo
          //Se intenta subir al servidor
-         //if (move_uploaded_file($temp, $archivo)) {
-         if (move_uploaded_file($temp, "/var/www/html/puesto/hotwheels/photos/".$_FILES['archivo']['name'])) {
+         if (move_uploaded_file($temp, $archivo)) {
+         //if (move_uploaded_file($temp, "/var/www/html/puesto/hotwheels/photos/".$_FILES['archivo']['name'])) {
              //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
              chmod($archivo, 0777);
              //Mostramos el mensaje de que se ha subido co éxito
