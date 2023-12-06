@@ -10,5 +10,12 @@ Class Hotwheels{
     public $stock;
     public $price;
     public $location;
+    public $consecutive;
+    public $imgs;
+}
+
+Class ImgPhoto{
+    public $consecutive;
+    public $file;
 }
 

@@ -63,6 +63,8 @@
 	  
 	  <input type="file" name="imgFileHotwheels" id="imgPhotoHotwheels">
 	  <input type="button" name="addHotwheelsPhoto" value="Subir img" onclick="uploadPhotoFile();">
+	  <br>
+	  <br>
 	  <div id="imgsDivs">
 	    <!--<img src="" name="imgPortada" alt="Img de Hotwheels" id="imgHotwheelsPortada">-->
 	  </div>

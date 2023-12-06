@@ -28,12 +28,18 @@ function getInfoHotwheelsByModelo(){
             document.forms["frmRegistroStockHotwheels"]["txtSerieName"].value = myObj.serie_name;
             document.forms["frmRegistroStockHotwheels"]["txtSerieNum"].value = myObj.serie_num;
 
-            if (myObj.photo!=null){
-                let imgPortada = "<img src=\""+myObj.photo+"\" name=\"imgPortada\" alt=\"Img de Hotwheels\" id=\"imgHotwheelsPortada\">";
-                document.getElementById("imgsDivs").innerHTML = imgPortada;
+            document.getElementById("imgsDivs").innerHTML = "";
+            if (myObj.imgs.length>0){
+                myObj.imgs.forEach(function(img) {
+                    //console.log(numero);
+                    let imgPortada = "<img src=\""+img.file.substring(1)+"\" alt=\"Img de Hotwheels\" width=\"200\" height=\"360\">";
+                    document.getElementById("imgsDivs").innerHTML = document.getElementById("imgsDivs").innerHTML + imgPortada;
+                });
+                //let imgPortada = "<img src=\""+myObj.photo+"\" name=\"imgPortada\" alt=\"Img de Hotwheels\" id=\"imgHotwheelsPortada\">";
+                //document.getElementById("imgsDivs").innerHTML = imgPortada;
             }
             
-            document.getElementById("ventanaRegistro").style.display = "block";
+            //document.getElementById("ventanaRegistro").style.display = "block";
         }
     }
     xmlhttp.open("GET", "./sys/getHotwheels.php?toy="+txtTo, true);
@@ -86,7 +92,7 @@ function uploadPhotoFile(){
     xmlHTTP.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 
-            alert("chido " + this.responseText);
+            //alert("chido " + this.responseText);
             //Agregar img en el espacio de divs
         }
     }
