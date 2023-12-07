@@ -32,7 +32,8 @@ function getInfoHotwheelsByModelo(){
             if (myObj.imgs.length>0){
                 myObj.imgs.forEach(function(img) {
                     //console.log(numero);
-                    let imgPortada = "<img src=\""+img.file.substring(1)+"\" alt=\"Img de Hotwheels\" width=\"200\" height=\"360\">";
+                    //let imgPortada = "<img src=\""+img.file.substring(1)+"\" alt=\"Img de Hotwheels\" width=\"200\" height=\"360\">";
+                    let imgPortada = "<img src=\""+img.file.substring(1)+"\" alt=\"Img de Hotwheels\">";
                     document.getElementById("imgsDivs").innerHTML = document.getElementById("imgsDivs").innerHTML + imgPortada;
                 });
                 //let imgPortada = "<img src=\""+myObj.photo+"\" name=\"imgPortada\" alt=\"Img de Hotwheels\" id=\"imgHotwheelsPortada\">";
@@ -92,7 +93,7 @@ function uploadPhotoFile(){
     xmlHTTP.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 
-            //alert("chido " + this.responseText);
+            alert("chido " + this.responseText);
             //Agregar img en el espacio de divs
         }
     }
